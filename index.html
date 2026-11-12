@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f6f5f0">
+  <title>오늘의 할 일</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js" defer></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-database-compat.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="app">
+    <header class="top"><span class="brand"><span class="brand-icon">✳</span> 하루 한 걸음</span><span class="top-note">MAKE TODAY COUNT</span></header>
+    <section class="intro">
+      <p class="eyebrow"><span></span> MY DAILY PLANNER</p>
+      <h1>오늘의 할 일<span>.</span></h1>
+      <p class="description">작은 일부터 하나씩, 나만의 속도로 채워보세요.</p>
+    </section>
+    <section class="planner" aria-label="할 일 관리">
+      <div class="planner-head"><div><p class="section-label">TO DO LIST</p><h2>나의 할 일 <span id="total-count">0</span></h2></div><div class="date" id="today"></div></div>
+      <form id="todo-form" class="add-form"><label class="sr-only" for="todo-input">새 할 일</label><input id="todo-input" type="text" maxlength="200" placeholder="어떤 일을 계획하고 있나요?" autocomplete="off" required><button type="submit"><span>＋</span> 추가하기</button></form>
+      <div class="list-bar"><div class="filters" role="group" aria-label="할 일 필터"><button class="filter active" data-filter="all" type="button" aria-pressed="true">전체</button><button class="filter" data-filter="active" type="button" aria-pressed="false">진행 중</button><button class="filter" data-filter="completed" type="button" aria-pressed="false">완료</button></div><span id="progress">0개 완료</span></div>
+      <p id="connection-status" role="status">Firebase에 연결하는 중입니다…</p>
+      <ul id="todo-list" aria-label="할 일 목록"></ul>
+      <div id="empty" class="empty"><div class="empty-icon">✓</div><strong>아직 할 일이 없어요</strong><p>오늘 이루고 싶은 일을 적어보세요.</p></div>
+      <div class="planner-footer"><span id="remaining">남은 할 일 0개</span><span>한 걸음씩, 충분히 잘하고 있어요 ✳</span></div>
+    </section>
+    <footer>YOUR DAY, YOUR PACE <span>✳</span></footer>
+  </main>
+</body>
+</html>
